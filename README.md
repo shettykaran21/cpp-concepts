@@ -11,3 +11,7 @@
 ## Operator Overloading
 
 -   [Operator Overloading](operator_overloading.cpp)
+
+## Virual Functions
+
+-   [Virtual Functions](virtual_functions.cpp)
