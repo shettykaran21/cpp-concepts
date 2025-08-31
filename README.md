@@ -23,5 +23,5 @@
 
 ## Static members of class
 
--   [Static variables](static_variables.cpp)
+-   [Static variables (Static data members)](static_variables.cpp)
 -   [Static member function](static_member_function.cpp)
