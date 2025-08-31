@@ -15,3 +15,13 @@
 ## Virual Functions
 
 -   [Virtual Functions](virtual_functions.cpp)
+
+## Friend functions & classes
+
+-   [Friend Function](friend_function.cpp)
+-   [Friend Class](friend_class.cpp)
+
+## Static members of class
+
+-   [Static variables](static_variables.cpp)
+-   [Static member function](static_member_function.cpp)
