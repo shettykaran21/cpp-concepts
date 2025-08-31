@@ -20,7 +20,7 @@ void fun() {
 }
 
 int main() {
-    // Every time we call 'fun', the value of v changes and it persists.
+    // Every time we call 'fun', the value of v increments by 1 and it's value persists.
     fun();
     fun();
     fun();
