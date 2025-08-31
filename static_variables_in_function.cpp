@@ -3,15 +3,27 @@
 using namespace std;
 
 /*
-The only difference between Global and Static variables is 'Scope'. Both persist for the entire program run and are stored in the program's "data" segment.
-- Global variables: Accessible from anywhere in the program.
-- Static variables inside functions: Only accessible within the function where they are declared.
+    Difference between Global and Static local variables:
+
+    - Both have **static storage duration**:
+        They are created once, live for the entire program, and are stored in the "data" segment.
+
+    - Global variables:
+        • Declared outside any function.
+        • Accessible from anywhere in the program (global scope).
+
+    - Static local variables:
+        • Declared inside a function with 'static'.
+        • Retain their value across multiple calls.
+        • Accessible only within the function they are declared in (local scope).
 */
 
 void fun() {
-    // Static variable defined inside function is accessible only inside the function
+    // 'v' is initialized only once, persists across all calls to fun(), but is visible only inside fun().
     static int v = 0;
 
+    // 'a' is a regular local variable (automatic storage).
+    // It is created and destroyed each time the function is called.
     int a = 5;
 
     v++;
@@ -20,10 +32,11 @@ void fun() {
 }
 
 int main() {
-    // Every time we call 'fun', the value of v increments by 1 and it's value persists.
-    fun();
-    fun();
-    fun();
+    // Each call re-creates 'a' (always 5),
+    // but 'v' is preserved and incremented because it is static.
+    fun();  // prints: 5 1
+    fun();  // prints: 5 2
+    fun();  // prints: 5 3
 
     return 0;
 }

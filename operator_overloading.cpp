@@ -36,14 +36,14 @@ class Complex {
     */
 
     // Friend operator overloading
-    // Only function declaration here. Definition is outside the class
+    // Declared here; definition is outside the class.
     friend Complex operator+(Complex &c1, Complex &c2);
 
-    // Friend operator overloading - cout
+    // Friend operator overloading - Stream output: lets us do `cout << c;`
     friend ostream &operator<<(ostream &o, Complex &c);
 };
 
-// Definition of '+'
+// '+' definition: add corresponding parts and return a new Complex
 Complex operator+(Complex &c1, Complex &c2) {
     Complex temp;
     temp.real = c1.real + c2.real;
@@ -51,7 +51,7 @@ Complex operator+(Complex &c1, Complex &c2) {
     return temp;
 }
 
-// Definition of <<'
+// '<<' definition: print as "a +i b"
 ostream &operator<<(ostream &o, Complex &c) {
     o << c.real << " +i" << c.img << '\n';
     return o;
@@ -60,12 +60,15 @@ ostream &operator<<(ostream &o, Complex &c) {
 int main() {
     Complex c1(3, 7);
     Complex c2(5, 4);
+
+    // Using the named method
     Complex c3 = c1.add(c2);
 
     cout << c3;
 
-    // Complex c4 = c1.operator+(c2);
-    Complex c4 = c1 + c2;  // We can use '+' directly instead of 'operator+'
+    // Using the operator (more natural syntax)
+    // Equivalent to c1.operator+(c2) if you enable the member version
+    Complex c4 = c1 + c2;
 
     cout << c4;
 

@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+
 using namespace std;
 
 /*
@@ -56,6 +57,28 @@ class RangeRover : public Car {
      not just the pointer type (Car).
 */
 
+/* --------------------------- Pure Virtual Functions --------------------------- */
+
+// Abstract base class: contains at least one pure virtual function
+class Shape {
+   public:
+    // Pure virtual function → must be implemented by derived classes
+    virtual void draw() = 0;
+
+    // Virtual destructor (good practice)
+    virtual ~Shape() = default;
+};
+
+class Circle : public Shape {
+   public:
+    void draw() override { cout << "Drawing Circle\n"; }
+};
+
+class Square : public Shape {
+   public:
+    void draw() override { cout << "Drawing Square\n"; }
+};
+
 int main() {
     // -------- Base pointer to Derived object (static binding) --------
     Base* p = new Derived();
@@ -76,6 +99,17 @@ int main() {
 
     my_car = new RangeRover();
     my_car->start();  // Calls RangeRover::start (resolved at runtime)
+
+    // -------- Pure Virtual Function --------
+    // Shape s; // ❌ cannot instantiate abstract class
+    Shape* s1 = new Circle();
+    Shape* s2 = new Square();
+
+    s1->draw();  // Drawing Circle
+    s2->draw();  // Drawing Square
+
+    delete s1;
+    delete s2;
 
     return 0;
 }
