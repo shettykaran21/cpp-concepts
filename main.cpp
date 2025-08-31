@@ -43,6 +43,7 @@ class Complex {
     friend ostream &operator<<(ostream &o, Complex &c);
 };
 
+// Definition of '+'
 Complex operator+(Complex &c1, Complex &c2) {
     Complex temp;
     temp.real = c1.real + c2.real;
@@ -50,6 +51,7 @@ Complex operator+(Complex &c1, Complex &c2) {
     return temp;
 }
 
+// Definition of <<'
 ostream &operator<<(ostream &o, Complex &c) {
     o << c.real << " +i" << c.img << '\n';
     return o;
