@@ -25,3 +25,7 @@
 
 -   [Static variables (Static data members)](static_variables.cpp)
 -   [Static member function](static_member_function.cpp)
+
+## Constants
+
+-   [Constants](constants.cpp)
