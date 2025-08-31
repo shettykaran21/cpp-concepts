@@ -24,7 +24,7 @@ class My {
 // class Your is a friend of My. Therefore, it can access all members of My.
 class Your {
    public:
-    void disp(My& m) {
+    void disp(My &m) {
         cout << m.a << '\n';
     }
 };

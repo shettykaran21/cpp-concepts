@@ -43,7 +43,7 @@ class Sample;
 
 class Helper {
    public:
-    void show(Sample& s);  // this will be made a friend of Sample
+    void show(Sample &s);  // this will be made a friend of Sample
 };
 
 class Sample {
@@ -52,10 +52,10 @@ class Sample {
 
    public:
     // Declaring only Helper::show as a friend (not the whole Helper class)
-    friend void Helper::show(Sample& s);
+    friend void Helper::show(Sample &s);
 };
 
-void Helper::show(Sample& s) {
+void Helper::show(Sample &s) {
     // Accessing private member of Sample
     cout << "Sample's secret = " << s.secret << '\n';
 }
