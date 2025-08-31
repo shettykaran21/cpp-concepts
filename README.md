@@ -5,6 +5,7 @@
 -   [Parameter passing](parameter_passing.cpp)
 -   [Returning by Reference and Address](return_by_reference_and_pointers.cpp)
 -   [Global Variables](global_variables.cpp)
+-   [Static Variables in a function](static_variables_in_function.cpp)
 
 ## Operator Overloading
 
