@@ -1,9 +1,0 @@
-{
-    "files.associations": {
-        "*.tcc": "cpp",
-        "cctype": "cpp",
-        "iostream": "cpp",
-        "iosfwd": "cpp",
-        "memory_resource": "cpp"
-    }
-}
